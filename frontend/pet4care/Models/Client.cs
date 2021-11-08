@@ -7,11 +7,11 @@ namespace pet4care.Models
 {
     public class Client
     {
-        public int Id { get; private set; }
-        public String Nom { get; private set; }
-        public String Prenom { get; private set; }
-        public String Adresse { get; private set; }
-        public String Tel { get; private set; }
-        public String Mdp { get; private set; }
+        public int Id { get; set; }
+        public String Nom { get; set; }
+        public String Prenom { get; set; }
+        public String Adresse { get; set; }
+        public String Tel { get; set; }
+        public String Mdp { get; set; }
     }
 }

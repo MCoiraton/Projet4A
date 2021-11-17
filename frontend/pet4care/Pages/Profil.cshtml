@@ -1,0 +1,90 @@
+﻿@page
+@model pet4care.Pages.ProfilModel
+@{
+    ViewData["Title"] = "profil";
+}
+<div class="text-center" id="profil">
+    <h1 class="display-4">Votre profil</h1>
+    <div id="sous_block1">
+        <div id="info">
+            <h3>Vos informations <br/> personnelles</h3>
+            <p>
+                @Model.Toto.Nom @Model.Toto.Prenom<br /><br />
+                Adresse : @Model.Toto.Adresse<br />
+                Teléphone : @Model.Toto.Tel<br /><br /><br />
+
+            </p>
+        </div>
+        <div id="nanimaux">
+            <h3>
+                Vos annimaux <br />
+            </h3>
+            <ul>-Nom animal (type animal)<br />-Nom animal (type animal)<br />-Nom animal (type animal)<br /></ul>
+            <a id="add">+</a>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h1 id="guardien" >Devenir Guardien !</h1>
+    </div>
+
+</div>
+
+
+    
+
+
+<style>
+    p {
+        
+        text-align: center; 
+    }
+
+    #profil {
+        display: flex;
+        
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 12px;
+        text-align: center;
+    }
+
+    #sous_block1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 25px;
+    }
+
+    #info {
+        border: 5px outset #203edc;
+        border-radius: 10px;
+        padding: 12px;
+    }
+
+    #nanimaux {
+        position: relative;
+        border: 5px outset #203edc;
+        border-radius: 10px;
+        padding: 12px;
+    }
+
+    #guardien {
+        border-radius: 10px;
+        margin: 25px;
+        text-align: center;
+        color: #203edc;
+    }
+
+    #add {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        margin: 10px;
+        background-color : #203edc;
+        color: white;
+        border-radius:50%;
+        width:25px;
+        height:25px;    
+    }
+</style>

@@ -1,0 +1,18 @@
+﻿@page
+@model pet4care.Pages.LoginModel
+@{
+}
+
+@if(Model.Erreur)
+{
+    <p>Impossible de se connecter.</p>
+}
+
+<form method="post">
+    <label for="pseudo">Pseudo</label><br />
+    <input type="text" name="pseudo" id="pseudo" /><br />
+    <label for="mdp">Mot de Passe</label><br />
+    <input type="password" name="mdp" id="mdp" /><br />
+    <input type="submit" value="Connexion"/>
+    @Html.AntiForgeryToken()
+</form>

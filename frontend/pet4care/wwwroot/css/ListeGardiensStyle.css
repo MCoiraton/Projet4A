@@ -39,7 +39,7 @@
     text-indent: 30px;
     padding-left: 5px;
     line-height: 1.5;
-    transition: all 1s;
+    transition: all 0.5s;
     overflow: hidden;
 }
 
@@ -47,6 +47,7 @@
         box-shadow: 5px 5px 5px red;
         background-image: linear-gradient(to right, tomato, lavender);
         transform: translate(20px,0px);
+        height: 150px;
         width: 50%;
     }
 

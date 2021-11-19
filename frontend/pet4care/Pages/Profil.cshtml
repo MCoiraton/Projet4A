@@ -17,7 +17,7 @@
         </div>
         <div id="nanimaux">
             <h3>
-                Vos annimaux <br />
+                Vos animaux <br />
             </h3>
             <ul>-Nom animal (type animal)<br />-Nom animal (type animal)<br />-Nom animal (type animal)<br /></ul>
             <a id="add">+</a>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="text-center">
-        <h1 id="guardien" >Devenir Guardien !</h1>
+        <h1 id="guardien" >Devenir Gardien !</h1>
     </div>
 
 </div>
@@ -35,6 +35,11 @@
 
 
 <style>
+
+    body {
+        background-image: linear-gradient(to bottom right, chartreuse, lightsteelblue, lightgray);
+    }
+
     p {
         
         text-align: center; 
@@ -57,16 +62,20 @@
     }
 
     #info {
+        background-image: linear-gradient(to right, lavender, lightgrey);
         border: 5px outset #203edc;
         border-radius: 10px;
         padding: 12px;
+        overflow: auto;
     }
 
     #nanimaux {
+        background-image: linear-gradient(to right, lavender, lightgrey);
         position: relative;
         border: 5px outset #203edc;
         border-radius: 10px;
         padding: 12px;
+        overflow: auto;
     }
 
     #guardien {
@@ -74,7 +83,15 @@
         margin: 25px;
         text-align: center;
         color: #203edc;
+        text-shadow: 4px 4px 3px #4d66e6;
+        
     }
+
+        #guardien:hover {
+            color: #ff471a;
+            text-shadow: 4px 4px 3px #ff5c33;
+            cursor: pointer;
+        }
 
     #add {
         position: absolute;

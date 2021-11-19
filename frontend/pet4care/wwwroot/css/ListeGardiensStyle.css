@@ -18,15 +18,18 @@
 }
 
 .btnDispo{
+    border-color: deepskyblue;
+    box-shadow: 2px 2px 2px lightblue;
     margin-top: 4px;
-    padding: 8px;
+    margin-bottom: 3px;
+    padding: 5px;
 }
 
 .Dispo:hover {
     box-shadow: 5px 5px 5px green;
     background-image: linear-gradient(to right, limegreen, lavender);
     transform: translate(20px,0px);
-    height: 150px;
+    height: initial;
     width: 50%;
 }
 
@@ -47,7 +50,7 @@
         box-shadow: 5px 5px 5px red;
         background-image: linear-gradient(to right, tomato, lavender);
         transform: translate(20px,0px);
-        height: 150px;
+        height: auto;
         width: 50%;
     }
 

@@ -13,5 +13,6 @@ namespace pet4care.Models
         public String Adresse { get; set; }
         public String Tel { get; set; }
         public String Mdp { get; set; }
+        public List <Animal> animals { get; set; }
     }
 }

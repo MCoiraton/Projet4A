@@ -19,7 +19,21 @@
             <h3>
                 Vos animaux <br />
             </h3>
-            <ul>-Nom animal (type animal)<br />-Nom animal (type animal)<br />-Nom animal (type animal)<br /></ul>
+            @{if (!Model.Toto.animals[0].Equals(null))
+                {foreach (Models.Animal a in Model.Toto.animals)
+                    {
+                        <div>
+                            <b>@(a.name)</b>
+                            <p>@(a.type)</p>
+                        </div>
+                    }
+                }
+                else{
+                    <div>
+                        <p> vous n'avez pas encore ajouté d'animaux</p>
+                    </div>
+                }
+            }
             <a id="add">+</a>
         </div>
     </div>
@@ -29,9 +43,9 @@
     </div>
 
 </div>
+                
 
 
-    
 
 
 <style>

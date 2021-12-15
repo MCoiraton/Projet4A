@@ -14,7 +14,7 @@ public class Reservation {
     @Id
     private String nom_client;
     private String nom_gardien;
-    @DateTimeFormat private Date date_debut;
-    private Date date_fin;
+   // @DateTimeFormat private Date date_debut;
+   // @DateTimeFormat private Date date_fin;
     private String commentaires;
 }

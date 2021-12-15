@@ -15,5 +15,5 @@ public class FicheAnimal {
     private int id;
     private String nom;
     private String type;
-    private String desc;
+    private String description;
 }

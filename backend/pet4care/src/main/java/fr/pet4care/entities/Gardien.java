@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Gardien extends Client {
-    @Id
+
     private String list_avis;
     private boolean status;
     private String list_disponible;

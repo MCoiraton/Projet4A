@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace pet4care.Pages
 {
@@ -22,25 +25,31 @@ namespace pet4care.Pages
                     Erreur = true;
                 }
             }
+            
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             string pseudo = Request.Form["pseudo"];
             using var sha256 = SHA256.Create(); 
             string hash = BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(Request.Form["mdp"]))).Replace("-", "").ToLower();
 
-            string token = Database.GetConnectionToken(pseudo, hash);
+            /*string token = Database.GetConnectionToken(pseudo, hash);
             if(token is null)
             {
                 token = "erreur";
                 HttpContext.Session.Set("token", Encoding.UTF8.GetBytes(token));
                 return RedirectToPage("/Login");
-            }
-            HttpContext.Session.Set("pseudo", Encoding.UTF8.GetBytes(pseudo));
-            HttpContext.Session.Set("hash", Encoding.UTF8.GetBytes(hash));
-            HttpContext.Session.Set("token", Encoding.UTF8.GetBytes(token));
-            return RedirectToPage("/");
+            }*/
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, pseudo),
+                new Claim(ClaimTypes.Hash, hash),
+                new Claim(ClaimTypes.Authentication, "true")
+            };
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+            return RedirectToPage("/Index");
         }
     }
 }

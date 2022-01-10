@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "clients")
 public class Client {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String mail;
     private String nom;
@@ -27,8 +29,7 @@ public class Client {
         this.estGardien = estGardien;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public int getId(){
         return id;
     }

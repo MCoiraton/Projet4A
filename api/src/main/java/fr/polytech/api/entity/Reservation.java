@@ -4,15 +4,15 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservation")
+@Table(name = "reservations")
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id ;
-    private String nom_client;
-    private String nom_gardien;
-    private Date date_debut;
-    private Date date_fin;
+    private int idClient;
+    private int idGardien;
+    private Date dateDebut;
+    private Date dateFin;
     private String commentaire;
 
     public Reservation() {}
@@ -34,36 +34,36 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getNom_client() {
-        return nom_client;
+    public String getIdClient() {
+        return idClient;
     }
 
-    public void setNom_client(String nom_client) {
-        this.nom_client = nom_client;
+    public void setIdClient(String idClient) {
+        this.idClient = IdClient;
     }
 
-    public String getNom_gardien() {
-        return nom_gardien;
+    public String getIdGardien() {
+        return idGardien;
     }
 
-    public void setNom_gardien(String nom_gardien) {
-        this.nom_gardien = nom_gardien;
+    public void setIdGardien(String idGardien) {
+        this.idGardien = idGardien;
     }
 
-    public Date getDate_debut() {
-        return date_debut;
+    public Date getDateDebut() {
+        return dateDebut;
     }
 
-    public void setDate_debut(Date date_debut) {
-        this.date_debut = date_debut;
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
     }
 
-    public Date getDate_fin() {
-        return date_fin;
+    public Date getDateFin() {
+        return dateFin;
     }
 
-    public void setDate_fin(Date date_fin) {
-        this.date_fin = date_fin;
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
     }
 
     public String getCommentaire() {

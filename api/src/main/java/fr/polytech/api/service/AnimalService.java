@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @Transactional
@@ -17,6 +18,13 @@ public class AnimalService {
     public List<Animal> listAllAnimal() { return  animalRepository.findAll(); }
 
     public  Animal getAnimal(Integer id) { return animalRepository.findById(id).get(); }
+
+    public List <Animal> getAnimalsByProprietaire(int idProprietaire){
+        List <Animal> animals = animalRepository.findByProprietaire(idProprietaire);
+        if(animals.size() <1)
+            throw new NoSuchElementException("Pas d'animaux avec ce proprio");
+        return animals;
+    }
 
     public void saveAnimal(Animal animal) { animalRepository.save(animal); }
 }

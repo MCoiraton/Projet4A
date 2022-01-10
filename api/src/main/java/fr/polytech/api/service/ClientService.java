@@ -37,6 +37,13 @@ public class ClientService implements UserDetailsService {
         return clients.get(0);
     }
 
+    public List <Client> getGardien(){
+        List <Client> gardiens = clientRepository.findByEstGardien(true);
+        if (gardiens.size() <1)
+            throw new NoSuchElementException("Pas encore de gardiens");
+        return gardiens;
+    }
+
     public void saveClient(Client client){
         clientRepository.save(client);
     }

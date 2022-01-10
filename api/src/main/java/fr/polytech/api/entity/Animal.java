@@ -30,12 +30,12 @@ public class Animal {
         this.id = id;
     }
     
-    public int getIdProrietaire() {
-        return idProrietaire;
+    public int getIdProprietaire() {
+        return idProprietaire;
     }
 
-    public void setIdProrietaire(int idProrietaire) {
-        this.idProrietaire = idProrietaire;
+    public void setIdProprietaire(int idProprietaire) {
+        this.idProprietaire = idProprietaire;
     }
 
     public String getNom() {

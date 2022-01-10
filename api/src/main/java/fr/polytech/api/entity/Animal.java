@@ -3,11 +3,12 @@ package fr.polytech.api.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "clients")
+@Table(name = "animal")
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int idProprietaire
     private String nom;
     private String type;
     private String description;

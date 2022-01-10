@@ -12,22 +12,28 @@ namespace pet4care.Pages
     {
 
         public List<Gardien> Gardiens { get; private set; }
+
+
         public void OnGet()
         {
+            getListGardiens();
 
-            Client client = new Client()
-            {
-                Id = 0,
-                Prenom = "Toto",
-                Nom = "Le Testeur",
-                Adresse = "Au milieu de nul part",
-                Tel = "0606060606",
-                Mdp = "C'estPasFaux!"
-            };
+        }
 
+        public void OnPost()
+        {
+            string nom = Request.Form["nom"];
+            string prenom = Request.Form["prenom"];
+            string ville = Request.Form["ville"];
+            getListGardiensFiltered(nom,prenom,ville);
+        }
+        
+        private void getListGardiens()
+        {
             Gardiens = new List<Gardien>();
-            Gardiens.Add(new Gardien() { 
-                
+            Gardiens.Add(new Gardien()
+            {
+
                 Id = 10,
                 Prenom = "Mathis",
                 Nom = "LeBG",
@@ -36,7 +42,7 @@ namespace pet4care.Pages
                 Mdp = "Stronk",
                 ListAvis = new List<Avis>(),
                 Status = true
-            
+
             });
             Gardiens.Add(new Gardien()
             {
@@ -64,9 +70,27 @@ namespace pet4care.Pages
                 Status = true
 
             });
-
+            
         }
 
+        private void getListGardiensFiltered(string nom, string prenom, string ville)
+        {
+            Gardiens = new List<Gardien>();
+            Gardiens.Add(new Gardien()
+            {
+
+                Id = 20,
+                Prenom = "sasn",
+                Nom = "undertal",
+                Adresse = "hav bad tiem",
+                Tel = "du du du du",
+                Mdp = "he",
+                ListAvis = new List<Avis>(),
+                Status = true
+
+            });
+
+        }
         
     }
 }

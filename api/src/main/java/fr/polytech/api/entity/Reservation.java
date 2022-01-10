@@ -38,7 +38,7 @@ public class Reservation {
         return idClient;
     }
 
-    public void setIdClient(String idClient) {
+    public void setIdClient(int idClient) {
         this.idClient = IdClient;
     }
 
@@ -46,7 +46,7 @@ public class Reservation {
         return idGardien;
     }
 
-    public void setIdGardien(String idGardien) {
+    public void setIdGardien(int idGardien) {
         this.idGardien = idGardien;
     }
 

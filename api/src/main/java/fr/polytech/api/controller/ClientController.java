@@ -31,6 +31,16 @@ public class ClientController {
         }
     }
 
+    @GetMapping("root/mail/{mail}")
+    public ResponseEntity<Client> getByMail(@PathVariable String mail){
+        try{
+            Client client = clientService.getClientByMail(mail);
+            return new ResponseEntity<Client>(client, HttpStatus.OK);
+        }catch (NoSuchElementException e){
+            return new ResponseEntity<Client>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping("/")
     public void add(@RequestBody Client client){
         clientService.saveClient(client);
@@ -47,4 +57,5 @@ public class ClientController {
             return new ResponseEntity<Client>(HttpStatus.NOT_FOUND);
         }
     }
+
 }

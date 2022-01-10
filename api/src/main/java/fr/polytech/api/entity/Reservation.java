@@ -19,7 +19,7 @@ public class Reservation {
 
     public Reservation(int id, int idClient, int idGardien, Date dateDebut, Date dateFin, String commentaire) {
         this.id = id;
-        this.idClient = nom_client;
+        this.idClient = idClient;
         this.idGardien = idGardien;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
@@ -34,7 +34,7 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getIdClient() {
+    public int getIdClient() {
         return idClient;
     }
 
@@ -42,7 +42,7 @@ public class Reservation {
         this.idClient = IdClient;
     }
 
-    public String getIdGardien() {
+    public int getIdGardien() {
         return idGardien;
     }
 

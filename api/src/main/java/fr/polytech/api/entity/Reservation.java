@@ -17,12 +17,12 @@ public class Reservation {
 
     public Reservation() {}
 
-    public Reservation(int id, String nom_client, String nom_gardien, Date date_debut, Date date_fin, String commentaire) {
+    public Reservation(int id, int idClient, int idGardien, Date dateDebut, Date dateFin, String commentaire) {
         this.id = id;
-        this.nom_client = nom_client;
-        this.nom_gardien = nom_gardien;
-        this.date_debut = date_debut;
-        this.date_fin = date_fin;
+        this.idClient = nom_client;
+        this.idGardien = idGardien;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
         this.commentaire = commentaire;
     }
 

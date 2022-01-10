@@ -22,8 +22,6 @@ import java.util.NoSuchElementException;
 @RestController
 @CrossOrigin
 public class AuthController {
-    @Autowired
-    private AuthenticationManager authenticationManager;
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;

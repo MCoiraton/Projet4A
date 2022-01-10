@@ -11,7 +11,9 @@ import javax.persistence.Table;
 @Table(name = "avis")
 @IdClass(AvisId.class)
 public class Avis {
+    @Id
     private int idGardien;
+    @Id
     private int idAuteur;
     private int note;
     private String message;
@@ -27,7 +29,7 @@ public class Avis {
         this.message = message;
     }
 
-    @Id
+
     public int getIdGardien() {
         return idGardien;
     }
@@ -36,7 +38,6 @@ public class Avis {
         this.idGardien = idGardien;
     }
 
-    @Id
     public int getIdAuteur() {
         return idAuteur;
     }

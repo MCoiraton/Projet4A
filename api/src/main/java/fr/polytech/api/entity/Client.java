@@ -29,7 +29,6 @@ public class Client {
         this.estGardien = estGardien;
     }
 
-
     public int getId(){
         return id;
     }
@@ -37,7 +36,6 @@ public class Client {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getMail() {
         return mail;

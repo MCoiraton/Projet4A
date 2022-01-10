@@ -1,0 +1,18 @@
+﻿body {
+    background-image: linear-gradient(to bottom right, chartreuse, lightsteelblue, lightgray);
+}
+
+.nomTitre {
+    color: forestgreen;
+    text-shadow: 2px 2px 5px green;
+}
+
+#message {
+    border: 2px solid;
+    height: 500px;
+    width: 80%;
+    overflow: auto;
+    background-color: aliceblue;
+    overflow-wrap: break-word;
+}
+

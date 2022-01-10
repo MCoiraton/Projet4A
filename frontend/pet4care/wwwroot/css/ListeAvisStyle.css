@@ -1,0 +1,56 @@
+﻿body {
+    background-image : linear-gradient(to bottom right, chartreuse, lightsteelblue, lightgray);
+
+}
+
+
+
+
+.nomTitre{
+   
+    color: forestgreen;
+    text-shadow: 2px 2px 5px green;
+
+}
+
+
+.avis {
+    border: 2px solid;
+    height: auto;
+    overflow: auto;
+    background-color: aliceblue;
+    overflow-wrap : break-word;
+}
+
+.message {
+    border: 1px solid;
+    background-color: white;
+    overflow: auto;
+    padding : 5px;
+    font-size: small;
+}
+
+.note{
+    font-size:large;
+    color: goldenrod;
+
+}
+
+.liste{
+    overflow-x : hidden;
+    height : 500px;
+    border : solid black;
+}
+
+section{
+
+    display: inline;
+}
+
+.btnDispo {
+    border-color: deepskyblue;
+    box-shadow: 2px 2px 2px lightblue;
+    margin-top: 4px;
+    margin-bottom: 3px;
+    padding: 5px;
+}

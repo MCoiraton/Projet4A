@@ -8,7 +8,7 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int idProprietaire
+    private int idProprietaire;
     private String nom;
     private String type;
     private String description;
@@ -28,6 +28,14 @@ public class Animal {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public int getIdProrietaire() {
+        return idProrietaire;
+    }
+
+    public void setIdProrietaire(int idProrietaire) {
+        this.idProrietaire = idProrietaire;
     }
 
     public String getNom() {

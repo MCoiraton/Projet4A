@@ -39,7 +39,7 @@ public class Reservation {
     }
 
     public void setIdClient(int idClient) {
-        this.idClient = IdClient;
+        this.idClient = idClient;
     }
 
     public int getIdGardien() {

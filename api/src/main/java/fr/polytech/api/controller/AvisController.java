@@ -37,7 +37,7 @@ public class AvisController {
         }
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public void add(@RequestBody Avis avis){
         avisService.saveAvis(avis);
     }

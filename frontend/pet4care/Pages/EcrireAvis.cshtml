@@ -1,0 +1,25 @@
+@page "{id}"
+@model pet4care.Pages.EcrireAvisModel
+@{
+}
+
+<div>
+    <h1 class="nomTitre">Ecrire un avis : </h1>
+
+    <div>
+        <form method="post">
+            <h2>Message :</h2>
+            <textarea id="message" name="message"></textarea>
+            <h2>Note :</h2>
+            <select id="note" name="note">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="submit" value="Envoyer" />
+            @Html.AntiForgeryToken()
+        </form>
+    </div>
+</div>

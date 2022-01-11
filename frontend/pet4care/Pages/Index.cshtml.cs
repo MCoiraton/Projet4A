@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using pet4care.Models;
 using pet4care.Services;
 
@@ -23,6 +24,14 @@ namespace pet4care.Pages
 
         public IActionResult OnGet()
         {
+            Avis avis = new Avis()
+            {
+                IdGardien = 1,
+                IdAuteur =2,
+                Note = 0,
+                Message = "Wheeze"
+            };
+            Debug = JsonConvert.SerializeObject(avis);
             string token = "";
             var t = User.Claims.FirstOrDefault(x => x.Type == "Token");
             if (t == null)

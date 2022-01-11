@@ -28,8 +28,11 @@ namespace pet4care.Pages
             catch{}
             return null;
         }
-
-        public static string RequestApi(string path, HttpMethod method, string token, HttpContent content = null)
+        public static string RequestApi(string path, HttpMethod method, string token)
+        {
+            return RequestApi(path, method, token, null);
+        }
+        public static string RequestApi(string path, HttpMethod method, string token, HttpContent content)
         {
             using (var client = new HttpClient())
             {
@@ -51,7 +54,7 @@ namespace pet4care.Pages
                 }
                 else
                 {
-                    throw new ArgumentException("Connexion au serveur rejettée");
+                    throw new ArgumentException("Connexion au serveur rejettée. " + request.Headers.ToString());
                 }
             }
         }

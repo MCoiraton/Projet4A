@@ -1,15 +1,19 @@
 @page "{id}"
 @model pet4care.Pages.ListeAvisModel
 @using pet4care.Models
+@{ 
+    int somme = 0;
+}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div>
-    <h1 class="nomTitre">Avis de : @Model.Client.Prenom @Model.Client.Nom</h1>
+    <h1 class="nomTitre">@Model.Client.Prenom @Model.Client.Nom (Moyenne de <span id="moyenne"></span>)</h1>
 
     <div class="liste">
     @foreach (Avis av in Model.Aviss)
     {
+        somme += av.Note;
         <div class="card bg-secondary text-light">
             <div class="card-header" style="padding:1em;">
                 @{for (int i = 0; i < 5; i++)
@@ -28,5 +32,10 @@
         <div class="card-body" style="padding:1em;">@av.Message</div>
     </div><br/>
     }
-
+@{ 
+    float moyenne = (float)somme / Model.Aviss.Count;
+}
+<script>
+    document.getElementById("moyenne").innerHTML = "@moyenne";
+</script>
 <a href="/EcrireAvis/@RouteData.Values["id"].ToString()" class="btn btn-primary">Ajouter un avis</a>

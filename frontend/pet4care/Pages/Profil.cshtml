@@ -21,17 +21,17 @@
             </h3>
             <ul>
                 @foreach (Models.Animal animal in Model.Animals)
-                    {
-                        <li>@animal.nom</li>
-                        <li id="animalType">(@animal.type)</li>
-                    }
-                    
-            </ul >
-            <a id = "add" > +</a>
-        </div >
-    </div >
+                {
+                    <li>@animal.nom</li>
+                    <li id="animalType">(@animal.type)</li>
+                }
+
+            </ul>
+            <a id="add"> +</a>
+        </div>
+    </div>
     <div class="text-center">
-        <h1 id = "guardien" > Devenir Guardien !</h1>
+        <h1 id="guardien"> Devenir Gardien !</h1>
     </div>
 
 </div>
@@ -41,49 +41,49 @@
 
 
 <style>
-            p {
-                text-align: center;
-            }
-            
-            #profil {
-                display: flex;
-                justify-content: space-around;
-                flex-direction: column;
-                padding: 12px;
-                text-align: center;
-            }
-            
-            #sous_block1 {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                margin: 25px;
-            }
+    p {
+        text-align: center;
+    }
 
-            #nanimaux {
-                position: relative;
-            }
+    #profil {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 12px;
+        text-align: center;
+    }
 
-            #animalType{
-                    font-size: smaller;
-            }
+    #sous_block1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 25px;
+    }
 
-            #guardien {
-                border-radius: 10px;
-                margin: 25px;
-                text-align: center;
-                color: #203edc;
-            }
+    #nanimaux {
+        position: relative;
+    }
 
-            #add {
-                position: absolute;
-                right: 0px;
-                bottom: 0px;
-                margin: 10px;
-                background-color: #203edc;
-                color: white;
-                border-radius: 50%;
-                width: 25px;
-                height: 25px;
-            }
+    #animalType {
+        font-size: smaller;
+    }
+
+    #guardien {
+        border-radius: 10px;
+        margin: 25px;
+        text-align: center;
+        color: #203edc;
+    }
+
+    #add {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        margin: 10px;
+        background-color: #203edc;
+        color: white;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+    }
 </style>

@@ -29,10 +29,10 @@
 
 <div id="authForm">
     <form method="post">
-        <label for="pseudo">Pseudo</label><br />
+        <label for="pseudo">Email</label><br />
         <input type="text" name="pseudo" id="pseudo" /><br />
         <label for="mdp">Mot de Passe</label><br />
-        <input type="password" name="mdp" id="mdp" /><br />
+        <input type="password" name="mdp" id="mdp" /><br /><br />
         <input type="submit" value="Connexion" />
         @Html.AntiForgeryToken()
     </form>

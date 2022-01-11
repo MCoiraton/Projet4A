@@ -53,12 +53,12 @@ namespace pet4care.Pages
                 IdGardien = int.Parse(Request.Form["idGardien"]),
                 IdAuteur = Client.Id,
                 Note = int.Parse(Request.Form["note"]),
-                Message = Request.Form["message"]
+                Message = Request.Form["message"].ToString() ?? "Oui"
             };
 
             aService.Update(avis);
 
-            return RedirectToPage("/");
+            return RedirectToPage("/Index");
         }
     }
 }

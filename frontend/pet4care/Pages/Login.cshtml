@@ -2,17 +2,43 @@
 @model pet4care.Pages.LoginModel
 @{
 }
-
-@if(Model.Erreur)
-{
-    <p>Impossible de se connecter.</p>
+<style>
+#authForm {
+    min-width: 400px;
+    width: 50%;
+    height: auto;
+    margin: auto;
 }
+#authForm form{
+    text-align: center;
+    margin-top: 3em;
+    border: solid 3px black;
+    border-radius: 2em;
+    padding: 2em;
+}
+#authForm form {
+    margin-bottom: 2em;
+}
+#authForm p {
+    text-align: center;
+    margin-top: 3em;
+    border: solid 3px red;
+    border-radius: 2em;
+}
+</style>
 
-<form method="post">
-    <label for="pseudo">Pseudo</label><br />
-    <input type="text" name="pseudo" id="pseudo" /><br />
-    <label for="mdp">Mot de Passe</label><br />
-    <input type="password" name="mdp" id="mdp" /><br />
-    <input type="submit" value="Connexion"/>
-    @Html.AntiForgeryToken()
-</form>
+<div id="authForm">
+    <form method="post">
+        <label for="pseudo">Pseudo</label><br />
+        <input type="text" name="pseudo" id="pseudo" /><br />
+        <label for="mdp">Mot de Passe</label><br />
+        <input type="password" name="mdp" id="mdp" /><br />
+        <input type="submit" value="Connexion" />
+        @Html.AntiForgeryToken()
+    </form>
+
+    @if (Model.Erreur)
+    {
+        <p>Impossible de se connecter.</p>
+    }
+</div>

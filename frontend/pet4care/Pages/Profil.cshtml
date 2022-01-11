@@ -7,7 +7,7 @@
     <h1 class="display-4">Votre profil</h1>
     <div id="sous_block1">
         <div id="info">
-            <h3>Vos informations <br/> personnelles</h3>
+            <h3>Vos informations <br /> personnelles</h3>
             <p>
                 @Model.Toto.Nom @Model.Toto.Prenom<br /><br />
                 Adresse : @Model.Toto.Adresse<br />
@@ -17,51 +17,30 @@
         </div>
         <div id="nanimaux">
             <h3>
-                Vos animaux <br />
+                Vos annimaux <br />
             </h3>
-            @{if (!Model.Toto.animals[0].Equals(null))
-                {foreach (Models.Animal a in Model.Toto.animals)
-                    {
-                        <div>
-                            <b>@(a.name)</b>
-                            <p>@(a.type)</p>
-                        </div>
-                    }
-                }
-                else{
-                    <div>
-                        <p> vous n'avez pas encore ajouté d'animaux</p>
-                    </div>
-                }
-            }
+            <ul>-Nom animal (type animal)<br />-Nom animal (type animal)<br />-Nom animal (type animal)<br /></ul>
             <a id="add">+</a>
         </div>
     </div>
 
     <div class="text-center">
-        <h1 id="guardien" >Devenir Gardien !</h1>
+        <h1 id="guardien">Devenir Guardien !</h1>
     </div>
 
 </div>
-                
+
 
 
 
 
 <style>
-
-    body {
-        background-image: linear-gradient(to bottom right, chartreuse, lightsteelblue, lightgray);
-    }
-
     p {
-        
-        text-align: center; 
+        text-align: center;
     }
 
     #profil {
         display: flex;
-        
         justify-content: space-around;
         flex-direction: column;
         padding: 12px;
@@ -76,20 +55,16 @@
     }
 
     #info {
-        background-image: linear-gradient(to right, lavender, lightgrey);
         border: 5px outset #203edc;
         border-radius: 10px;
         padding: 12px;
-        overflow: auto;
     }
 
     #nanimaux {
-        background-image: linear-gradient(to right, lavender, lightgrey);
         position: relative;
         border: 5px outset #203edc;
         border-radius: 10px;
         padding: 12px;
-        overflow: auto;
     }
 
     #guardien {
@@ -97,25 +72,17 @@
         margin: 25px;
         text-align: center;
         color: #203edc;
-        text-shadow: 4px 4px 3px #4d66e6;
-        
     }
-
-        #guardien:hover {
-            color: #ff471a;
-            text-shadow: 4px 4px 3px #ff5c33;
-            cursor: pointer;
-        }
 
     #add {
         position: absolute;
         right: 0px;
         bottom: 0px;
         margin: 10px;
-        background-color : #203edc;
+        background-color: #203edc;
         color: white;
-        border-radius:50%;
-        width:25px;
-        height:25px;    
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
     }
 </style>

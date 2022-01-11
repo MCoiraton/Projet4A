@@ -1,12 +1,35 @@
 ﻿@page
-@model IndexModel
+@using pet4care.Models
+@model pet4care.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
 }
+<p>@Model.Debug</p>
+<link rel="stylesheet" href="~/css/ListeGardiensStyle.css" />
+<div>
+    <h1 class="nomTitre">Liste des gardiens : </h1>
+    <div>
+        Filtres :
+        <form method="post">
+            Nom :
+            <input type="text" id="nom" name="nom" />
+            Prénom :
+            <input type="text" id="prenom" name="prenom" />
+            Ville :
+            <input type="text" id="ville" name="ville" />
+            <input type="submit" value="Filtrer" />
+            @Html.AntiForgeryToken()
+        </form>
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <br/>
-    <h2>Mathis le <b>BG</b></h2>
+    @foreach (Client g in Model.Gardiens)
+    {
+        <div>
+            @g.Prenom @g.Nom<br />
+            Adresse : <a href="https://www.google.com/maps/place/@g.Adresse" target="_blank">@g.Adresse</a><br />
+            Télephone : @g.Tel<br />
+            <div> Moyenne des avis : @g.Moyenne</div>
+            <button class="btnDispo">Voir les avis</button>
+            <button class="btnDispo">Faire une demande de gardiennage</button>
+        </div><br />
+    }
 </div>

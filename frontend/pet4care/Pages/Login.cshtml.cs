@@ -34,17 +34,14 @@ namespace pet4care.Pages
             using var sha256 = SHA256.Create(); 
             string hash = BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(Request.Form["mdp"]))).Replace("-", "").ToLower();
 
-            /*string token = Database.GetConnectionToken(pseudo, hash);
+            string token = Database.GetConnectionToken(pseudo, hash);
             if(token is null)
-            {
-                token = "erreur";
-                HttpContext.Session.Set("token", Encoding.UTF8.GetBytes(token));
-                return RedirectToPage("/Login");
-            }*/
+                return RedirectToPage("/Index");
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, pseudo),
                 new Claim(ClaimTypes.Hash, hash),
+                new Claim("Token", token),
                 new Claim(ClaimTypes.Authentication, "true")
             };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

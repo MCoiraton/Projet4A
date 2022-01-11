@@ -15,13 +15,6 @@ namespace pet4care.Pages
 
         public void OnGet()
         {
-            Animal animal = new Animal
-            {
-                name = "leChien",
-                type="chat",
-                espece="iEBVLB<LENLNLk"
-
-            };
             Toto = new Client
             {
                 Id = 0,
@@ -29,9 +22,7 @@ namespace pet4care.Pages
                 Nom = "Le Testeur",
                 Adresse = "Au milieu de nul part",
                 Tel = "0606060606",
-                Mdp = "C'estPasFaux!",
-                animals = new List<Animal> {animal },
-                
+                Mdp = "C'estPasFaux!"
             };
         }
     }

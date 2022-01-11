@@ -21,6 +21,11 @@ public class AvisController {
     public List<Avis> list(){
         return avisService.listAllAvis();
     }
+    
+    @GetMapping("/auteur/{id}")
+    public List<Avis> list(@PathVariable Integer id){
+        return avisService.getAvisByIdGardien(id);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Avis> get(@PathVariable AvisId id){

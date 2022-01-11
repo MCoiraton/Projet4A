@@ -17,7 +17,7 @@
                     @Html.Raw("<option value=\""+i+"\""+ (i==Model.Avis.Note?" selected":"") +">"+i+"</option>")
                 }
             </select>
-            <input type="hidden" name="idGardien" value="@Model.Client.Id" />
+            <input type="hidden" name="idGardien" value="@RouteData.Values["id"].ToString()" />
             <input type="submit" value="Envoyer" />
             @Html.AntiForgeryToken()
         </form>

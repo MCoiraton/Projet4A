@@ -21,7 +21,7 @@ namespace pet4care.Pages
             ClientService cService = new ClientService(token);
             Client = cService.GetById(id);
             AvisService aService = new AvisService(token);
-            Aviss = aService.GetByAuteurId(id);
+            Aviss = aService.GetByGardienId(id);
             return Page();
         }
     }

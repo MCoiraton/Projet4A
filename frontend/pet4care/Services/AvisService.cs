@@ -14,9 +14,14 @@ namespace pet4care.Services
             _token = token;
         }
 
-        public List<Avis> GetByAuteurId(int auteur)
+        public List<Avis> GetByIds(int idGardien, int idAuteur)
         {
-            return JsonConvert.DeserializeObject<List<Avis>>(Database.RequestApi("/avis/auteur/" + auteur, HttpMethod.Get, _token));
+            return JsonConvert.DeserializeObject<List<Avis>>(Database.RequestApi("/avis/auteur/" + idGardien + "/" + idAuteur, HttpMethod.Get, _token));
+        }
+
+        public List<Avis> GetByGardienId(int idGardien)
+        {
+            return JsonConvert.DeserializeObject<List<Avis>>(Database.RequestApi("/avis/" + idGardien, HttpMethod.Get, _token));
         }
     }
 }

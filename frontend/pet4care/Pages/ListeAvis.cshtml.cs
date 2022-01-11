@@ -9,7 +9,8 @@ namespace pet4care.Pages
 {
     public class ListeAvisModel : PageModel
     {
-        public List<Avis> Aviss;
+        public List<Avis> Aviss { get; private set; }
+        public Client Client { get; private set; }
         public IActionResult OnGet()
         {
             int id = int.Parse(RouteData.Values["id"].ToString());
@@ -17,6 +18,8 @@ namespace pet4care.Pages
             if (t == null)
                 return RedirectToPage("/Login");
             string token = t.Value;
+            ClientService cService = new ClientService(token);
+            Client = cService.GetById(id);
             AvisService aService = new AvisService(token);
             Aviss = aService.GetByAuteurId(id);
             return Page();

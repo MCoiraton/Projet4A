@@ -3,6 +3,7 @@ using pet4care.Models;
 using pet4care.Pages;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 
 namespace pet4care.Services
 {
@@ -22,6 +23,12 @@ namespace pet4care.Services
         public List<Avis> GetByGardienId(int idGardien)
         {
             return JsonConvert.DeserializeObject<List<Avis>>(Database.RequestApi("/avis/" + idGardien, HttpMethod.Get, _token));
+        }
+
+        internal void Update(Avis avis)
+        {
+            //+avis.IdGardien+"/"+avis.IdAuteur
+            Database.RequestApi("/avis/", HttpMethod.Post, _token, new StringContent(JsonConvert.SerializeObject(avis), Encoding.UTF8, "application/json"));
         }
     }
 }

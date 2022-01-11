@@ -1,4 +1,4 @@
-﻿namespace pet4care.Models
+namespace pet4care.Models
 {
     public class Animal
     {
@@ -7,7 +7,5 @@
         public string nom { get; set; }
         public string type { get; set; }
         public string description { get; set; }
-
- 
     }
 }

@@ -1,4 +1,4 @@
-﻿@page
+@page
 @using pet4care.Models
 @model pet4care.Pages.IndexModel
 @{
@@ -21,15 +21,20 @@
         </form>
     </div>
 
-    @foreach (Client g in Model.Gardiens)
-    {
-        <div>
-            @g.Prenom @g.Nom<br />
-            Adresse : <a href="https://www.google.com/maps/place/@g.Adresse" target="_blank">@g.Adresse</a><br />
-            Télephone : @g.Tel<br />
-            <div> Moyenne des avis : @g.Moyenne</div>
-            <button class="btnDispo">Voir les avis</button>
-            <button class="btnDispo">Faire une demande de gardiennage</button>
-        </div><br />
-    }
+    <div style="display:flex;">
+        @foreach (Client g in Model.Gardiens)
+        {
+            <div class="card text-white bg-secondary" style="width:auto;height:auto;margin:1em;">
+                <div class="card-header">@g.Prenom @g.Nom</div>
+                <div class="card-body" style="padding: 1em;">
+                    Adresse : <a href="https://www.google.com/maps/place/@g.Adresse" target="_blank">@g.Adresse</a><br />
+                    Télephone : @g.Tel<br />
+                    <div> Moyenne des avis : @g.Moyenne</div>
+                    <br/>
+                    <a href="/ListeAvis/@g.Id" class="btn btn-warning">Voir les avis</a>
+                    <button class="btn btn-primary">Faire une demande de gardiennage</button>
+                </div>
+            </div><br />
+        }
+    </div>
 </div>

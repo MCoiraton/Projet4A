@@ -5,25 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using pet4care.Services;
 
 namespace pet4care.Pages
 {
     public class ProfilModel : PageModel
     {
-        public Client Toto { get; private set; }
+        public Client Client { get; private set; }
+        
+        public List<Animal> Animals { get; private set; }
 
-
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Toto = new Client
-            {
-                Id = 0,
-                Prenom = "Toto",
-                Nom = "Le Testeur",
-                Adresse = "Au milieu de nul part",
-                Tel = "0606060606",
-                Mdp = "C'estPasFaux!"
-            };
+            string token = "";
+            var t = User.Claims.FirstOrDefault(x => x.Type == "Token");
+            if (t == null)
+                return RedirectToPage("/Login");
+            token = t.Value;
+            ClientService cService = new ClientService(token);
+            Client = cService.GetByMail(User.Identity.Name);
+            AnimalService aService = new AnimalService(token);
+            Animals = aService.getByProprietaire(Client.Id);
+            return Page();
         }
     }
 }

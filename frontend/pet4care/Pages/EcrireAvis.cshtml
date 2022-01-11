@@ -9,16 +9,17 @@
     <div>
         <form method="post">
             <h2>Message :</h2>
-            <textarea id="message" name="message" style="width:100%">@Model.Avis.Message</textarea>
+            <textarea class="form-control" id="message" name="message" style="width: 100%;min-height: 27em;
+">@Model.Avis.Message</textarea>
             <h2>Note :</h2>
-            <select id="note" name="note">
+            <select class="form-control" id="note" name="note">
                 @for(int i=1; i<6; i++)
                 {
                     @Html.Raw("<option value=\""+i+"\""+ (i==Model.Avis.Note?" selected":"") +">"+i+"</option>")
                 }
             </select>
-            <input type="hidden" name="idGardien" value="@RouteData.Values["id"].ToString()" />
-            <input type="submit" value="Envoyer" />
+            <input type="hidden" name="idGardien" value="@RouteData.Values["id"].ToString()" /><br/>
+            <input class="form-control" type="submit" value="Envoyer" />
             @Html.AntiForgeryToken()
         </form>
     </div>

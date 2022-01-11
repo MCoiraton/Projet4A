@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using pet4care.Models;
 using pet4care.Pages;
+using System.Collections.Generic;
 using System.Net.Http;
 
 namespace pet4care.Services
@@ -13,9 +14,9 @@ namespace pet4care.Services
             _token = token;
         }
 
-        public Client GetByAuteurId(int auteur)
+        public List<Avis> GetByAuteurId(int auteur)
         {
-            return JsonConvert.DeserializeObject<Client>(Database.RequestApi("/avis/auteur/" + auteur, HttpMethod.Get, _token));
+            return JsonConvert.DeserializeObject<List<Avis>>(Database.RequestApi("/avis/auteur/" + auteur, HttpMethod.Get, _token));
         }
     }
 }

@@ -1,39 +1,25 @@
-@page {id}
+@page "{id}"
 @model pet4care.Pages.ListeAvisModel
 @using pet4care.Models
-@{
-}
-<link rel="stylesheet" href="~/css/ListeAvisStyle.css" />
+
 <div>
-    <h1 class="nomTitre">Avis de : Jimmy TacosEater </h1>
-
-
+    <h1 class="nomTitre">Avis de : @Model.Client.Prenom @Model.Client.Nom</h1>
 
     <div class="liste">
-    @{foreach (Avis av in Model.Aviss)
-        {
-            <div class="avis">
-                Avis de : @av.Nom #@av.Id
+    @foreach (Avis av in Model.Aviss)
+    {
+        <div class="avis">
+            Avis de : @av.Nom #@av.Id
                 
-                <div class="message">@av.Message</div>
+        <div class="message">@av.Message</div>
                 
-                <div class="note">
-                    Note finale : @{for(int i=0;i<av.Note;i++)
-                        {
-
-                            <section>&#9734</section>
+        <div class="note">
+            Note finale : @{for(int i=0;i<av.Note;i++)
+                            {
+                                <section>&#9734</section>
                             } }
-                        </div>
-
-
-    </div>
-    <br/>
-        }
-
+        </div>
+    </div><br/>
     }
-</div>
 
-    <button class="btnDispo">Ajouter un avis</button>
-</div>
-
-
+<a href="/EcrireAvis/@RouteData.Values["id"].ToString()" class="btn btn-primary">Ajouter un avis</a>

@@ -21,16 +21,16 @@ public class AvisController {
     public List<Avis> list(){
         return avisService.listAllAvis();
     }
-    
-    @GetMapping("/auteur/{id}")
+
+    @GetMapping("/{id}")
     public List<Avis> list(@PathVariable Integer id){
         return avisService.getAvisByIdGardien(id);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Avis> get(@PathVariable AvisId id){
+    @GetMapping("/{idGardien}/{idAuteur}")
+    public ResponseEntity<Avis> get(@PathVariable int idGardien, @PathVariable int idAuteur){
         try{
-            Avis avis = avisService.getAvis(id);
+            Avis avis = avisService.getAvis(new AvisId(idGardien, idAuteur));
             return new ResponseEntity<Avis>(avis, HttpStatus.OK);
         }catch (NoSuchElementException e){
             return new ResponseEntity<Avis>(HttpStatus.NOT_FOUND);

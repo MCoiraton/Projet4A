@@ -16,6 +16,11 @@ namespace pet4care.Services
         {
             _token = token;
         }
+        
+        public Client GetById(int id)
+        {
+            return JsonConvert.DeserializeObject<Client>(Database.RequestApi("/clients/" + id, HttpMethod.Get, _token));
+        }
 
         public Client GetByMail(string mail)
         {

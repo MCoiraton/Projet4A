@@ -17,7 +17,7 @@ namespace pet4care.Services
 
         public Avis GetByIds(int idGardien, int idAuteur)
         {
-            return JsonConvert.DeserializeObject<Avis>(Database.RequestApi("/avis/auteur/" + idGardien + "/" + idAuteur, HttpMethod.Get, _token));
+            return JsonConvert.DeserializeObject<Avis>(Database.RequestApi("/avis/" + idGardien + "/" + idAuteur, HttpMethod.Get, _token));
         }
 
         public List<Avis> GetByGardienId(int idGardien)
@@ -27,8 +27,7 @@ namespace pet4care.Services
 
         internal void Update(Avis avis)
         {
-            //+avis.IdGardien+"/"+avis.IdAuteur
-            Database.RequestApi("/avis/", HttpMethod.Post, _token, new StringContent(JsonConvert.SerializeObject(avis), Encoding.UTF8, "application/json"));
+            Database.RequestApi("/avis", HttpMethod.Post, _token, new StringContent(JsonConvert.SerializeObject(avis), Encoding.UTF8, "application/json"));
         }
     }
 }

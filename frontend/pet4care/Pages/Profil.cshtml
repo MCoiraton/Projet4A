@@ -6,7 +6,7 @@
 <div class="text-center" id="profil">
     <h1 class="display-4">Votre profil</h1>
     <div id="sous_block1">
-        <div id="info">
+        <div class="card text-white bg-secondary" style="width:auto;height:auto;margin:1em; padding:1em;">
             <h3>Vos informations <br /> personnelles</h3>
             <p>
                 @Model.Client.Nom @Model.Client.Prenom<br /><br />
@@ -15,7 +15,7 @@
 
             </p>
         </div>
-        <div id="nanimaux">
+        <div id="nanimaux" class="card text-white bg-secondary" style="width:auto;height:auto;margin:1em; padding:1em;">
             <h3>
                 Vos animaux :<br />
             </h3>
@@ -60,17 +60,8 @@
                 margin: 25px;
             }
 
-            #info {
-                border: 5px outset #203edc;
-                border-radius: 10px;
-                padding: 12px;
-            }
-
             #nanimaux {
                 position: relative;
-                border: 5px outset #203edc;
-                border-radius: 10px;
-                padding: 12px;
             }
 
             #animalType{
